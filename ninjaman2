@@ -128,14 +128,27 @@
 			drawNinjaman();
 			drawWorld();
 		}
-		var checkForCollisions = function(ninjaman, sushi){
-			for(var i=0, i < sushi.length; i++){
-				var distance = dist(ninjaman.x,ninjaman.y,sushi[i].x,sushi[i].y);
-				if(distance <= (ninjaman.size / 2 + sushi[i].size / 2)){
-					sushi.splice(i,1);
-					}
-				}
+		function drawScore() {
+    		ctx.font = "16px Arial";
+    		ctx.fillStyle = "#0095DD";
+    		ctx.fillText("Score: "+ gameScore, 8, 20);
 		}
+
+		function collisionDetection() {
+    	for(var c=0; c<brickColumnCount; c++) {
+        for(var r=0; r<brickRowCount; r++) {
+            var b = bricks[c][r];
+            if(b.status == 1) {
+                if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+                    dy = -dy;
+                    b.status = 0;
+                    score++;
+                }
+            }
+        }
+    	}
+	}
+
 		// keep score of sushi's ninjaman eats
 		//sushi = 10, ongiri = 5pt
 
