@@ -3,9 +3,9 @@
 <head>
 	<title>ninjaman</title>
 	<style>
-	{
-		margin: 0;
-		padding: 0;
+	body {
+		margin: 0 auto;
+		text-align: center;
 	}
 	.wall {
 		background-color:blue;
@@ -46,14 +46,36 @@
 		left: 40px;
 		top: 40px;
 	}
+	#scoreboard {
+		margin: 0 auto;
+		text-align: center;
+		height: 35%;
+		width: 35%;
+		min-width: 200px;
+		min-height: 100px;
+		background-color: white;
+		border: 1px solid black;
+	}
    </style>
 </head>
 <body>
-	<div id ="world"></div>
-	<div id="ninjaman"></div>
+	<div id="scoreboard">
+		<h1>Score: <span id="score"></span></h1>
+	</div>
+		<div id="ninjaman"></div>
+		<div id ="world"></div>
+	
+
 </body>	
 <script type="text/javascript">
 		var gameScore = 0;
+
+		//added basic function for showing gamescore
+		const setScore=()=>{
+			let scoreValue=document.getElementById("score");
+			scoreValue.innerHTML=gameScore;
+		}	
+
 		var world = [
 			[1,1,1,1,1],
 			[1,0,2,2,1],
@@ -83,13 +105,14 @@
 				output+="</div>";
 			}
 			document.getElementById('world').innerHTML=output;
+			setScore();
 		}
 		drawWorld();
 
 		var ninjaman = {
 			x: 1,
 			y: 1
-		}
+		}		
 
 		function drawNinjaman(){
 			document.getElementById('ninjaman').style.top = ninjaman.y * 40 + 'px';
@@ -127,11 +150,7 @@
 			world[ninjaman.y][ninjaman.x] = 0;
 			drawNinjaman();
 			drawWorld();
-		}
-		function drawScore() {
-    		ctx.font = "16px Arial";
-    		ctx.fillStyle = "#0095DD";
-    		ctx.fillText("Score: "+ gameScore, 8, 20);
+			setScore();
 		}
 
 		function collisionDetection() {
