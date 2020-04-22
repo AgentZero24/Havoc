@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--This is a really basic mockup to show you the grid. For simplicity, I put all the CSS here. Obviously you will need to change the picture sources (and the text). Once you change the primary img src, you will see how the general grid can look. Not that I used floats for the primary img and article and that I used display: inline-block for the columns.-->
+<html>
+<head>
+	<style>
+		body {
+			height: 800px;
+			width: 752px;
+		}
+		main {
+			height: 70%;
+		}
+		#portrait {
+			max-height: 300px;
+			max-width: 300px;
+			margin-right: 150px;
+			float: left;
+		}
+		article {
+			height: 300px;
+			width: 300px;
+			border: 1px solid black;
+			float: left;
+			
+		}
+		.column {
+			width: 220px;
+			height: 45%;
+			background-color: gray;
+			margin: 2px;
+			display: inline-block;
+			
+		}
+		footer {
+			margin-top: 20px;
+			height: 130px;
+			background-color: blue;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>User name</h1>
+	</header>
+	<main>
+		<img id="portrait" src="picture.jpg">
+		<article>
+			<p>Here is a little about myself</p>
+		</article>
+
+	
+	<div class="column">
+		<div>La Mode</div>
+			<img>
+			<p>La Mode is an Ecommerce...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Purus viverra accumsan in nisl. Lorem donec massa sapien faucibus et molestie ac feugiat.</p>
+		<div>Technologies</div>
+		<img>
+		<img>
+	</div>
+	<div class="column">
+		<div>La Mode</div>
+			<img>
+			<p>La Mode is an Ecommerce...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Purus viverra accumsan in nisl. Lorem donec massa sapien faucibus et molestie ac feugiat.</p>
+		<div>Technologies</div>
+		<img>
+		<img>
+	</div>
+	<div class="column">
+		<div>La Mode</div>
+			<img>
+			<p>La Mode is an Ecommerce...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Purus viverra accumsan in nisl. Lorem donec massa sapien faucibus et molestie ac feugiat.</p>
+		<div>Technologies</div>
+		<img>
+		<img>
+	</div>
+	</main>
+	<footer>
+		<h2>That's all folks!</h2>
+	</footer>
+</body>
+
+
+
+</html>
